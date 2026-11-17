@@ -1,131 +1,101 @@
 
-# Character Manager — TP5 (Java Visual SIH-6406)
+# Character Manager - Sprint #3
+## MainWindow, Data Dinamis & Analisis MVC
 
-## Deskripsi Project
+### 1. Deskripsi Proyek
+Character Manager Sprint #3 merupakan pengembangan aplikasi berbasis Java menggunakan Swing GUI. Aplikasi ini menampilkan data karakter secara dinamis melalui komponen JFrame, JPanel, dan JLabel.
 
-Character Manager Sprint #2 merupakan pengembangan aplikasi berbasis Java untuk mengelola kumpulan objek Character menggunakan ArrayList.
+Data karakter dikelola menggunakan class CharacterManager, kemudian ditampilkan pada MainWindow. Aplikasi juga menghitung jumlah karakter dan rata-rata level secara otomatis.
 
-Project ini menerapkan konsep Object-Oriented Programming (OOP), khususnya object reference, encapsulation, equals(), defensive copy, dan static variable.
+### 2. Fitur yang Dikembangkan
+- Menampilkan data karakter menggunakan Java Swing.
+- Menampilkan minimal lima karakter.
+- Menampilkan nama, tipe, level, HP, attack power, dan mana.
+- Menghitung jumlah karakter secara otomatis.
+- Menghitung rata-rata level karakter.
+- Menambahkan karakter melalui tombol Tambah Karakter Demo.
+- Memperbarui tampilan dan statistik setelah data berubah.
+- Membuat GUI menggunakan SwingUtilities.invokeLater().
 
-Program menyediakan fitur CRUD sederhana serta analisis karakter berdasarkan level, jenis, dan Attack Power.
-
----
-
-## A. Implementasi Core
-
-Fitur yang dikembangkan:
-
-1. equals() untuk membandingkan karakter berdasarkan nama.
-2. addCharacter() untuk menambahkan karakter.
-3. findByName() untuk mencari karakter.
-4. removeCharacter() untuk menghapus karakter.
-5. getTotalCharacters() untuk menghitung jumlah karakter.
-6. getAllCharacters() untuk mengambil salinan daftar karakter.
-
-Penambahan karakter dengan nama duplikat akan ditolak oleh sistem.
-
-## B. Mini-Challenge
-
-### 1. getAverageLevel()
-
-Menghitung rata-rata level seluruh karakter.
-
-Jika daftar karakter kosong, method mengembalikan nilai 0 untuk menghindari pembagian dengan nol.
-
-### 2. findByType(CharacterType type)
-
-Mencari seluruh karakter berdasarkan jenis karakter tertentu dan mengembalikannya dalam bentuk ArrayList.
-
-## C. Fitur Analitik Mandiri
-
-### findStrongest()
-
-Method ini digunakan untuk mencari karakter dengan Attack Power tertinggi.
-
-Proses dilakukan dengan membandingkan nilai Attack Power setiap karakter dalam daftar.
-
-Method mengembalikan salinan objek agar data internal CharacterManager tetap terlindungi.
-
-## D. Object Reference Experiment
-
-Program menguji hubungan reference menggunakan dua variabel objek, yaitu a dan b.
-
-Ketika b diberikan nilai dari a, kedua variabel menunjuk objek yang sama. Oleh karena itu, perubahan atribut melalui b juga memengaruhi objek yang diakses melalui a.
-
-Program juga menggunakan copy constructor untuk menghasilkan objek independen sehingga perubahan pada objek salinan tidak memengaruhi objek asli.
-
-## E. Defensive Copy
-
-Method getAllCharacters() menghasilkan salinan ArrayList beserta objek Character di dalamnya.
-
-Pengujian dilakukan dengan menghapus seluruh isi daftar salinan.
-
-Hasilnya, daftar karakter asli tetap memiliki data yang sama karena tidak menggunakan reference ArrayList yang sama.
-
----
-
-## Screenshot Output Program
-
-![Character Manager TP5](charactermanager TP5.png)
-
----
-
-## Struktur Folder
-
+### 3. Struktur Folder
 ```text
-charactermanager/
-│
-├── CharacterManager/
-│   ├── src/
-│   │   └── com/
-│   │       └── unpri/
-│   │           └── charactermanager/
-│   │               ├── Main.java
-│   │               └── model/
-│   │                   ├── Character.java
-│   │                   ├── CharacterType.java
-│   │                   └── CharacterManager.java
-│   │
-│   └── out/
-│
+CharacterManager/
+├── src/
+│   └── com/unpri/charactermanager/
+│       ├── Main.java
+│       ├── model/
+│       │   ├── Character.java
+│       │   ├── CharacterType.java
+│       │   └── CharacterManager.java
+│       └── view/
+│           └── MainWindow.java
 ├── screenshots/
-│   └── output-tp5.png
-│
+│   ├── tp8-before.png
+│   └── tp8-after.png
 └── README.md
 ```
 
-## Teknologi
+### 4. Data Karakter
+Karakter yang ditampilkan pada aplikasi:
+1. Arthur - WARRIOR, Level 5
+2. Merlin - MAGE, Level 3
+3. Robin - ARCHER, Level 4
+4. Morgana - MAGE, Level 6
+5. Athena - ASSASSIN, Level 7
 
-- Java
-- JDK 17
+Setelah tombol Tambah Karakter Demo ditekan, aplikasi menambahkan Hero 6 dengan tipe WARRIOR dan Level 8.
+
+### 5. Screenshot Aplikasi
+
+#### Tampilan Sebelum Penambahan Karakter
+![Tampilan Sebelum](Screenshots/BEFORE TP 8.png)
+
+Jumlah karakter: 5  
+Total level: 25  
+Rata-rata level: 5.00
+
+#### Tampilan Setelah Penambahan Karakter
+![Tampilan Setelah](Screenshots/AFTER TP 8.png)
+
+Jumlah karakter: 6  
+Total level: 33  
+Rata-rata level: 5.50
+
+### 6. Alur Data dan Konsep MVC
+Alur aplikasi dimulai dari class Main yang membuat objek CharacterManager dan mengisi data karakter. Selanjutnya, objek CharacterManager diberikan kepada MainWindow untuk mengakses dan menampilkan data karakter. MainWindow menggunakan perulangan untuk membaca seluruh karakter dan menampilkannya melalui komponen JLabel. Ketika pengguna menekan tombol tambah karakter, data diperbarui melalui CharacterManager dan tampilan serta statistik dimuat kembali.
+
+Dalam konsep MVC:
+- **Model:** Character, CharacterType, dan CharacterManager mengelola data serta aturan aplikasi.
+- **View:** MainWindow bertanggung jawab menampilkan data dalam bentuk GUI.
+- **Controller:** Pada versi ini, pengelolaan alur masih sederhana dan sebagian interaksi ditangani melalui event listener di MainWindow.
+
+### 7. Teknologi yang Digunakan
+- Java JDK 17
 - Visual Studio Code
-- Git
-- GitHub
-- ArrayList
-- Object-Oriented Programming
+- Java Swing
+- Java Extension Pack
+
+### 8. Cara Menjalankan Program
+1. Buka folder proyek menggunakan Visual Studio Code.
+2. Pastikan JDK 17 sudah terpasang.
+3. Buka file Main.java.
+4. Jalankan program melalui tombol Run Java.
+5. Jendela Character Manager akan muncul.
+6. Tekan tombol Tambah Karakter Demo untuk menguji perubahan data dan statistik.
+
+### 9. Analisis Tugas
+Dokumentasi analisis tugas TP8 membahas:
+- Perbedaan pemrograman sequential dan event-driven.
+- Fungsi SwingUtilities.invokeLater().
+- Penggunaan JFrame dan setVisible(true).
+- Konsep hubungan is-a dan has-a.
+- Pembagian tanggung jawab Model dan View dalam MVC.
+
+**Link Google Docs Analisis:**  
+[(https://docs.google.com/document/d/1Hj7ydaICSuB1yNE1RJtG0xxb4lDeT7WdjJKfeLuvxrA/edit?usp=sharing)]
 
 ---
 
-## Identitas Mahasiswa
-
-- Nama: ALga Vancany Yunita Purba
-- NIM: 253303621269
-- Kelas: 3 PAGI - B
-- Program Studi: Sistem Informasi
-- Fakultas: Sains dan Teknologi
-- Universitas: Universitas Prima Indonesia
-- Mata Kuliah: Java Visual
-- Kode Mata Kuliah: SIH-6406
-
-## Dokumentasi Analisis TP5
-
-Google Docs:
-
-[(https://docs.google.com/document/d/1w-ZLNuCGWYLtGJEnl95HBE_sf676Owdr9LcjKeZFc3M/edit?usp=sharing)]
-
----
-
-Character Manager Sprint #2  
-Java Visual (SIH-6406)  
-UNPRI  
-Dosen: Dr. Evta Indra
+**Mata Kuliah:** Java Visual  
+**Program Studi:** Sarjana Sistem Informasi  
+**Universitas:** Universitas Prima Indonesia
