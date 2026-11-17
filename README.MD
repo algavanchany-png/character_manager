@@ -59,8 +59,8 @@ charactermanager/
 
 ## Identitas Mahasiswa
 
-- Nama: [NAMA LENGKAP]
-- NIM: [NIM]
+- Nama: Alga Vancany Yunita Purba
+- NIM: 253303621269
 - Program Studi: Sistem Informasi
 - Fakultas: Sains dan Teknologi
 - Universitas: Universitas Prima Indonesia
@@ -70,7 +70,7 @@ charactermanager/
 ## Dokumentasi Analisis Desain
 
 Google Docs:
-[MASUKKAN LINK GOOGLE DOCS DI SINI]
+[https://docs.google.com/document/d/1ZYXXrvSimTg-zZKCt7ZDSSMAazwRgTQa5tb1kKx1kJA/edit?usp=sharing]
 
 Dokumen tersebut berisi analisis mengenai:
 - Ekosistem Java (JVM, JRE, dan JDK).
