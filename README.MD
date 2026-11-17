@@ -17,4 +17,4 @@
 
 ### D. Analisis Analitis & MVC
 Analisis lengkap mengenai JavaBeans, event-driven, layout manager, pemetaan warna, dan logical fonts telah diunggah ke Google Docs:
-* **Link Google Docs:** [JavaVisual_TP10_253303621269_AlgaVancany](https://docs.google.com/document/d/1Kxv-E4ZcHrXY8oa1qOW9hKyvnrYYd0IZRMDx6knVnew/edit?usp=sharing)
+* **Link Google Docs:** [JavaVisual_TP10_253303621269_AlgaVancany](https://docs.google.com/document/d/1iKdJJd23U-3HRd0__CXKbo0j7XV7Vrr-E0DKajIQWiY/edit?tab=t.0#heading=h.o7l3pu3awiw7)
