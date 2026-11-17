@@ -1,20 +1,87 @@
-## TP10 — Character Manager Sprint #4 (Theming & MVC)
 
-### A. Implementasi Tema & Screenshot
-* **AppTheme.java** dibuat di package `view` memuat 3 warna utama, 3 font, 1 border kustom, dan method `colorFor()`.
-* **Screenshot Sebelum (v0.3):**
-  *(Letakkan path gambar screenshot `screenshots/tp8-before.png` di sini)*
-* **Screenshot Sesudah (v0.4):**
-  *(Letakkan path gambar screenshot `screenshots/tp10-after.png` di sini)*
+# Character Manager — TP3 (Java Visual SIH-6406)
 
-### B. Penjelasan Mengapa Warna Disimpan di `AppTheme` dan Bukan di `Character`
-1. **Pemisahan Tanggung Jawab (Separation of Concerns):** Pengaturan warna, font, dan border adalah aspek visual antarmuka pengguna (**View**), sedangkan objek `Character` murni merepresentasikan data entitas bisnis (**Model**).
-2. **Fleksibilitas Desain:** Jika suatu saat tema aplikasi diubah (misalnya dari Mode Terang ke Mode Gelap), kita hanya perlu memodifikasi kelas `AppTheme` tanpa harus mengubah struktur atau logika data di dalam kelas `Character`.
+## Deskripsi
 
-### C. Daftar Dua Properti Tambahan yang Dipilih
-1. **High-Level Text Highlighting (Teks Emas & Tebal):** Karakter dengan level $\ge 5$ otomatis menampilkan nama berwarna emas dan tebal untuk memudahkan identifikasi karakter tingkat tinggi secara visual.
-2. **Dynamic Card Tooltip (`setToolTipText`):** Setiap kartu karakter dilengkapi tooltip yang menampilkan detail informasi tambahan saat kursor diarahkan ke atas kartu tersebut.
+Character Manager merupakan aplikasi sederhana berbasis Java yang dikembangkan untuk memenuhi tugas TP3 mata kuliah Java Visual. Program ini menerapkan konsep Object-Oriented Programming (OOP), seperti class, object, constructor, enum, dan encapsulation.
 
-### D. Analisis Analitis & MVC
-Analisis lengkap mengenai JavaBeans, event-driven, layout manager, pemetaan warna, dan logical fonts telah diunggah ke Google Docs:
-* **Link Google Docs:** [JavaVisual_TP10_253303621269_AlgaVancany](https://docs.google.com/document/d/1iKdJJd23U-3HRd0__CXKbo0j7XV7Vrr-E0DKajIQWiY/edit?tab=t.0#heading=h.o7l3pu3awiw7)
+Pada proyek ini, pengguna dapat membuat karakter berdasarkan jenis dan level, melihat statistik karakter, meningkatkan level, serta mengelola atribut mana. Program juga memiliki fitur validasi mana dan pengecekan status hidup karakter menggunakan method isAlive().
+
+## Fitur Program
+
+1. Membuat karakter menggunakan dua constructor.
+2. Menggunakan enum CharacterType.
+3. Menerapkan encapsulation dengan atribut private.
+4. Getter dan setter untuk mengakses atribut.
+5. Perhitungan otomatis HP dan Attack Power berdasarkan level.
+6. Fitur Level Up untuk meningkatkan level karakter.
+7. Penambahan atribut Mana.
+8. Validasi agar nilai Mana tidak negatif.
+9. Method isAlive() untuk memeriksa status karakter.
+10. Method toString() untuk menampilkan informasi karakter.
+
+## Screenshot Output Program
+
+Screenshot berikut menunjukkan hasil eksekusi program Character Manager melalui terminal.
+
+![Output Terminal TP3](screenshots/output-tp3.png)
+
+## Struktur Folder Project
+
+```text
+charactermanager/
+│
+├── CharacterManager/
+│   ├── src/
+│   │   └── com/
+│   │       └── unpri/
+│   │           └── charactermanager/
+│   │               ├── Main.java
+│   │               └── model/
+│   │                   ├── Character.java
+│   │                   └── CharacterType.java
+│   │
+│   └── out/
+│
+├── screenshots/
+│   └── output-tp3.png
+│
+└── README.md
+```
+
+## Teknologi yang Digunakan
+
+- Java
+- JDK 17
+- Visual Studio Code
+- Git
+- GitHub
+
+## Identitas Mahasiswa
+
+- Nama: Alga Vancany Yunita Purba
+- NIM: 253303621269
+- Program Studi: Sistem Informasi
+- Fakultas: Sains dan Teknologi
+- Universitas: Universitas Prima Indonesia
+- Mata Kuliah: Java Visual
+- Kode Mata Kuliah: SIH-6406
+
+## Dokumentasi Analisis Desain
+
+Google Docs:
+[https://docs.google.com/document/d/1ZYXXrvSimTg-zZKCt7ZDSSMAazwRgTQa5tb1kKx1kJA/edit?usp=sharing]
+
+Dokumen tersebut berisi analisis mengenai:
+- Ekosistem Java (JVM, JRE, dan JDK).
+- Encapsulation.
+- Dua constructor dan enum.
+- Diagram class UML.
+- Refleksi Open-Closed Principle.
+
+---
+
+**Character Manager Sprint #1**
+Java Visual (SIH-6406)
+Universitas Prima Indonesia (UNPRI)
+Dosen: Dr. Evta Indra
