@@ -1,74 +1,26 @@
 package com.unpri.charactermanager;
 
 import com.unpri.charactermanager.model.Character;
+import com.unpri.charactermanager.model.CharacterManager;
 import com.unpri.charactermanager.model.CharacterType;
+import com.unpri.charactermanager.view.MainWindow;
+import javax.swing.SwingUtilities;
 
 public class Main {
-
     public static void main(String[] args) {
+        CharacterManager manager = new CharacterManager();
 
-        System.out.println("==================================");
-        System.out.println("      CHARACTER MANAGER TP3");
-        System.out.println("==================================");
+        // 6 Karakter dengan variasi role dan level
+        manager.addCharacter(new Character("Arthur", CharacterType.WARRIOR, 6));   // Level >= 5 (Highlight Emas)
+        manager.addCharacter(new Character("Merlin", CharacterType.MAGE, 3));
+        manager.addCharacter(new Character("Robin", CharacterType.ARCHER, 4));
+        manager.addCharacter(new Character("Morgana", CharacterType.MAGE, 7));   // Level >= 5 (Highlight Emas)
+        manager.addCharacter(new Character("Athena", CharacterType.ASSASSIN, 5)); // Level >= 5 (Highlight Emas)
+        manager.addCharacter(new Character("Lancelot", CharacterType.WARRIOR, 2));
 
-        // Membuat tiga karakter menggunakan constructor pertama
-        Character warrior = new Character(
-                "Arthur", CharacterType.WARRIOR, 5);
-
-        Character mage = new Character(
-                "Merlin", CharacterType.MAGE, 3);
-
-        Character archer = new Character(
-                "Robin", CharacterType.ARCHER, 4);
-
-        // Menampilkan karakter awal
-        System.out.println("\n--- DAFTAR KARAKTER ---");
-
-        System.out.println(warrior);
-        System.out.println(mage);
-        System.out.println(archer);
-
-        // Demonstrasi level up
-        System.out.println("\n--- DEMO LEVEL UP ---");
-
-        System.out.println("Sebelum level up:");
-        System.out.println(warrior);
-
-        warrior.levelUp();
-
-        System.out.println("\nSesudah level up:");
-        System.out.println(warrior);
-
-        // Demonstrasi constructor kedua
-        System.out.println("\n--- CONSTRUCTOR KEDUA ---");
-
-        Character knight = new Character(
-                "Leon",
-                CharacterType.WARRIOR,
-                3,
-                250,
-                40,
-                50
-        );
-
-        System.out.println(knight);
-
-        // Mini Challenge: Mana dan isAlive()
-        System.out.println("\n--- MINI CHALLENGE ---");
-
-        Character necro = new Character(
-                "Morgana",
-                CharacterType.MAGE,
-                5
-        );
-
-        necro.setMana(100);
-
-        System.out.println("Nama: " + necro.getName());
-        System.out.println("Mana: " + necro.getMana());
-        System.out.println("Apakah karakter hidup? "
-                + necro.isAlive());
-
-        System.out.println("\n--- SELESAI ---");
+        SwingUtilities.invokeLater(() -> {
+            MainWindow window = new MainWindow(manager);
+            window.setVisible(true);
+        });
     }
 }
